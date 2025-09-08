@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/ProductsViewController.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/CustomersViewController.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/DataViewController.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/service/WarehouseManager.java</file>
+            <file>file:/D:/warehouseappgui/manifest.mf</file>
+            <file>file:/D:/warehouseappgui/mm</file>
+            <file>file:/D:/warehouseappgui/nbproject/configs/Run_in_Browser.properties</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/DataView.fxml</file>
+            <file>file:/D:/warehouseappgui/test/warehouseappgui/MainApp.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/model/Customers.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/MainViewController.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/TransactionsViewController.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/SupplierViewController.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/styles.css</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/LowStockView.fxml</file>
+            <file>file:/D:/warehouseappgui/nbproject/build-impl.xml</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/model/SaleItem.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/model/Products.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/SaleViewController.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/model/Supplier.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/model/Invoice.java</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/model/Transaction.java</file>
+            <file>file:/D:/warehouseappgui/build.xml</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/ProductView.fxml</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/TransactionsView.fxml</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/SupplierView.fxml</file>
+            <file>file:/D:/warehouseappgui/products.txt</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/SaleView.fxml</file>
+            <file>file:/D:/warehouseappgui/nbproject/jfx-impl.xml</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/LowStockViewController.java</file>
+            <file>file:/D:/warehouseappgui/src/warehouseappgui/MainApp.java</file>
+            <file>file:/D:/warehouseappgui/src/warehouseappgui/MainView.fxml</file>
+            <file>file:/D:/warehouseappgui/src/com/warehouse/view/CustomersView.fxml</file>
+        </group>
+    </open-files>
+</project-private>

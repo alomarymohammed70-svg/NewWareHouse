@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:controller="com.warehouse.view.LowStockViewController" 
+            prefHeight="700.0" prefWidth="1000.0" 
+            xmlns="http://javafx.com/javafx/8.0.171" 
+            xmlns:fx="http://javafx.com/fxml/1">
+    
+    <VBox spacing="20" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" 
+          AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Label text="⚠️ المخزون الناقص" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #e67e22;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="🔄 تحديث" onAction="#handleRefresh" style="-fx-padding: 8 16; -fx-background-color: #3498db; -fx-text-fill: white;"/>
+            <Button text="🖨️ طباعة التقرير" onAction="#handlePrintReport" style="-fx-padding: 8 16; -fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+        </HBox>
+        
+        <TableView fx:id="lowStockTable" prefHeight="550">
+            <columns>
+                <TableColumn fx:id="barcodeColumn" text="الباركود" prefWidth="120"/>
+                <TableColumn fx:id="nameColumn" text="اسم المنتج" prefWidth="250"/>
+                <TableColumn fx:id="currentQuantityColumn" text="الكمية الحالية" prefWidth="120"/>
+                <TableColumn fx:id="minQuantityColumn" text="الحد الأدنى" prefWidth="120"/>
+                <TableColumn fx:id="differenceColumn" text="الفرق" prefWidth="100"/>
+                <TableColumn fx:id="statusColumn" text="الحالة" prefWidth="120"/>
+            </columns>
+        </TableView>
+        
+        <HBox alignment="CENTER_RIGHT" spacing="15">
+            <Label text="عدد المنتجات الناقصة:" style="-fx-font-weight: bold; -fx-text-fill: #e67e22;"/>
+            <Label fx:id="countLabel" text="0" style="-fx-font-weight: bold; -fx-text-fill: #e67e22;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="📧 إشعار الموردين" onAction="#handleNotifySuppliers" style="-fx-padding: 8 16; -fx-background-color: #f39c12; -fx-text-fill: white;"/>
+            <Button text="➕ طلب شراء" onAction="#handlePurchaseOrder" style="-fx-padding: 8 16; -fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+            <Button text="📋 تقرير مفصل" onAction="#handleGenerateFullReport" style="-fx-padding: 8 16; -fx-background-color: #34495e; -fx-text-fill: white;"/>
+        </HBox>
+        
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+
+<AnchorPane fx:controller="com.warehouse.view.SaleViewController" prefHeight="700.0" prefWidth="1000.0" 
+            styleClass="content-pane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <VBox spacing="20" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" 
+          AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        
+        <Label styleClass="header-title" text="💰 نقطة البيع" />
+        
+        <!-- قسم البحث وإدخال المنتج -->
+        <VBox spacing="15" styleClass="form-pane">
+            <Label styleClass="label-fancy" text="إدخال المنتج" />
+            
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="البحث:" styleClass="form-label"/>
+                <TextField fx:id="searchField" promptText="🔍 ابحث بالاسم أو الباركود" styleClass="text-field" HBox.hgrow="ALWAYS"/>
+            </HBox>
+            
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="المنتج:" styleClass="form-label"/>
+                <ComboBox fx:id="productComboBox" promptText="اختر المنتج" styleClass="combo-box" HBox.hgrow="ALWAYS"/>
+            </HBox>
+            
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="مسح الباركود:" styleClass="form-label"/>
+                <TextField fx:id="barcodeField" promptText="📷 امسح الباركود" styleClass="text-field" HBox.hgrow="ALWAYS"/>
+            </HBox>
+            
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="الكمية:" styleClass="form-label"/>
+                <TextField fx:id="quantityField" text="1" styleClass="text-field" prefWidth="80"/>
+                <Button text="➕" onAction="#increaseQuantity" styleClass="icon-button"/>
+                <Button text="➖" onAction="#decreaseQuantity" styleClass="icon-button"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="إضافة إلى السلة" onAction="#handleProductSelection" styleClass="button-fancy button-add"/>
+            </HBox>
+        </VBox>
+
+        <!-- قسم السلة -->
+        <VBox spacing="15" styleClass="form-pane">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label styleClass="label-fancy" text="🛒 سلة المشتريات" />
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="🗑️ حذف المحدد" onAction="#removeFromCart" styleClass="button-delete"/>
+                <Button text="✅ إتمام البيع" onAction="#handleCompleteSale" styleClass="button-success"/>
+            </HBox>
+            
+            <TableView fx:id="cartTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="cartNameColumn" text="المنتج" prefWidth="250"/>
+                    <TableColumn fx:id="cartQuantityColumn" text="الكمية" prefWidth="80"/>
+                    <TableColumn fx:id="cartPriceColumn" text="السعر" prefWidth="100"/>
+                    <TableColumn fx:id="cartTotalColumn" text="المجموع" prefWidth="100"/>
+                </columns>
+            </TableView>
+            
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Label text="المجموع الكلي:" styleClass="label-fancy" />
+                <Label fx:id="totalLabel" text="0.00" styleClass="label-fancy success-color"/>
+                <Label text="ريال" styleClass="label-fancy"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</AnchorPane>

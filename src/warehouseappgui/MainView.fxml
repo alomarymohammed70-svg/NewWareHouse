@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.warehouse.view.MainViewController">
+   <stylesheets>
+    <URL value="@styles.css" />
+</stylesheets>
+
+
+    <left>
+        <VBox styleClass="sidebar" alignment="TOP_CENTER" spacing="25">
+            <padding>
+                <Insets top="30" right="15" bottom="30" left="15"/>
+            </padding>
+            <Label styleClass="sidebar-header" text="لوحة التحكم" />
+            <Separator />
+            <VBox spacing="15" alignment="TOP_CENTER">
+                <Button fx:id="productsButton" onAction="#handleProductsButton" text="📦 المنتجات" styleClass="sidebar-button products-button" />
+<Button fx:id="customersButton" onAction="#handleCustomersButton" text="👥 العملاء" styleClass="sidebar-button customers-button" />
+<Button fx:id="suppliersButton" onAction="#handleSuppliersButton" text="🏢 الموردين" styleClass="sidebar-button suppliers-button" />
+<Button fx:id="saleButton" onAction="#handleSaleButton" text="💰 البيع" styleClass="sidebar-button sale-button" />
+<Button fx:id="lowStockButton" onAction="#handleCheckLowStockButton" text="⚠️ المخزون الناقص" styleClass="sidebar-button low-stock-button" />
+<Button fx:id="transactionsButton" onAction="#handleShowTransactionsButton" text="📊 سجل العمليات" styleClass="sidebar-button transactions-button" />
+            </VBox>
+            <VBox spacing="15" alignment="TOP_CENTER">
+                
+            </VBox>
+        </VBox>
+    </left>
+    
+    <center>
+        <AnchorPane fx:id="mainContentPane" BorderPane.alignment="CENTER" />
+    </center>
+</BorderPane>

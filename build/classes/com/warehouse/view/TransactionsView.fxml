@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:controller="com.warehouse.view.TransactionsViewController" 
+            prefHeight="700.0" prefWidth="1000.0" 
+            xmlns="http://javafx.com/javafx/8.0.171" 
+            xmlns:fx="http://javafx.com/fxml/1">
+    
+    <VBox spacing="20" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" 
+          AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Label text="📊 سجل العمليات" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="من:" style="-fx-font-weight: bold;"/>
+                <DatePicker fx:id="startDatePicker" style="-fx-pref-width: 120;"/>
+                <Label text="إلى:" style="-fx-font-weight: bold;"/>
+                <DatePicker fx:id="endDatePicker" style="-fx-pref-width: 120;"/>
+                <Button text="🔍 بحث" onAction="#handleFilter" style="-fx-padding: 5 10; -fx-background-color: #f39c12; -fx-text-fill: white;"/>
+            </HBox>
+            
+            <Button text="🔄 تحديث" onAction="#handleRefresh" style="-fx-padding: 5 10; -fx-background-color: #3498db; -fx-text-fill: white;"/>
+            <Button text="🖨️ طباعة" onAction="#handlePrint" style="-fx-padding: 5 10; -fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+        </HBox>
+        
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <ComboBox fx:id="typeFilterCombo" promptText="نوع العملية" style="-fx-pref-width: 150;"/>
+            
+            <TextField fx:id="searchField" promptText="بحث بالمنتج..." style="-fx-pref-width: 200;"/>
+            <Button text="🗑️ تصفية" onAction="#handleFilter" style="-fx-padding: 5 10; -fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+            <Button text="✅ مسح الفلتر" onAction="#handleClearFilter" style="-fx-padding: 5 10; -fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+        </HBox>
+        
+        <TableView fx:id="transactionsTable" prefHeight="500">
+            <columns>
+                <TableColumn fx:id="idColumn" text="رقم العملية" prefWidth="100"/>
+                <TableColumn fx:id="dateColumn" text="التاريخ والوقت" prefWidth="150"/>
+                <TableColumn fx:id="typeColumn" text="نوع العملية" prefWidth="120"/>
+                <TableColumn fx:id="productColumn" text="المنتج" prefWidth="200"/>
+                <TableColumn fx:id="quantityColumn" text="الكمية" prefWidth="100"/>
+                <TableColumn fx:id="priceColumn" text="السعر" prefWidth="100"/>
+                <TableColumn fx:id="totalColumn" text="الإجمالي" prefWidth="120"/>
+                <TableColumn fx:id="userColumn" text="المستخدم" prefWidth="150"/>
+            </columns>
+        </TableView>
+        
+        <HBox alignment="CENTER_RIGHT" spacing="15">
+            <Label text="إجمالي المبيعات:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="totalSalesLabel" text="0.00 ر.س" style="-fx-font-weight: bold; -fx-text-fill: green;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="عدد العمليات:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="countLabel" text="0" style="-fx-font-weight: bold;"/>
+            <Button text="📊 إحصائيات" onAction="#handleShowStatistics" style="-fx-padding: 5 10; -fx-background-color: #34495e; -fx-text-fill: white;"/>
+            <Button text="💰 تقرير مبيعات" onAction="#handleSalesReport" style="-fx-padding: 5 10; -fx-background-color: #27ae60; -fx-text-fill: white;"/>
+            <Button text="📤 تصدير" onAction="#handleExport" style="-fx-padding: 5 10; -fx-background-color: #8e44ad; -fx-text-fill: white;"/>
+        </HBox>
+        
+    </VBox>
+</AnchorPane>

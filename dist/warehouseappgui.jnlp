@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="warehouseappgui.jnlp">
+  <information>
+    <title>warehouseappgui</title>
+    <vendor>WIN</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib\mysql-connector-j-9.4.0.jar" size="2591877" download="eager" />
+    <jar href="warehouseappgui.jar" size="80521" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="warehouseappgui" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="warehouseappgui.MainApp"  name="warehouseappgui" />
+  <update check="always"/>
+</jnlp>

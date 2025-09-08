@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<AnchorPane fx:controller="com.warehouse.view.ProductsViewController" prefHeight="700.0" prefWidth="1000.0" styleClass="content-pane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+ <stylesheets>
+    <URL value="@styles.css" />
+</stylesheets>
+
+    
+    <VBox spacing="20" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Label styleClass="header-title" text="إدارة المنتجات" />
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="searchField" promptText="بحث بالاسم..." styleClass="search-field" />
+        </HBox>
+
+        <HBox spacing="20" VBox.vgrow="ALWAYS">
+            <VBox spacing="20" styleClass="form-pane">
+                <Label styleClass="label-fancy" text="البيانات الأساسية للمنتج" />
+                <GridPane hgap="15" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                    </columnConstraints>
+                    <Label styleClass="label-fancy" text="الباركود:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="barcodeField" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Label styleClass="label-fancy" text="الاسم:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="nameField" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label styleClass="label-fancy" text="الكمية:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="quantityField" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label styleClass="label-fancy" text="سعر البيع:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="priceField" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label styleClass="label-fancy" text="سعر الشراء:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <TextField fx:id="purchasePriceField" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <Label styleClass="label-fancy" text="الحد الأدنى للسعر:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <TextField fx:id="minSellingPriceField" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    <Label styleClass="label-fancy" text="الحد الأدنى للكمية:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <TextField fx:id="minQuantityField" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                </GridPane>
+                
+                <HBox alignment="CENTER" spacing="15">
+                    <Button onAction="#handleAdd" text="إضافة" styleClass="button-fancy button-add" />
+                    <Button onAction="#handleUpdate" text="تحديث" styleClass="button-fancy button-update" />
+                    <Button onAction="#handleDelete" text="حذف" styleClass="button-fancy button-delete" />
+                </HBox>
+            </VBox>
+            
+            <VBox spacing="20" HBox.hgrow="ALWAYS">
+                <TableView fx:id="productTable" VBox.vgrow="ALWAYS" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="barcodeColumn" prefWidth="120.0" text="الباركود" />
+                        <TableColumn fx:id="nameColumn" prefWidth="180.0" text="الاسم" />
+                        <TableColumn fx:id="quantityColumn" prefWidth="80.0" text="الكمية" />
+                        <TableColumn fx:id="priceColumn" prefWidth="100.0" text="سعر البيع" />
+                        <TableColumn fx:id="purchasePriceColumn" prefWidth="100.0" text="سعر الشراء" />
+                        <TableColumn fx:id="minSellingPriceColumn" prefWidth="120.0" text="الحد الأدنى للسعر" />
+                        <TableColumn fx:id="minQuantityColumn" prefWidth="120.0" text="الحد الأدنى للكمية" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>
